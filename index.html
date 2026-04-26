@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Findamentals | Daily Finance Reading</title>
+    <meta
+      name="description"
+      content="Findamentals is a daily finance reading platform mixing news, skill-building, historical context, research, and real people to watch."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar" data-topbar>
+        <div class="brand-lockup">
+          <span class="brand-mark">F</span>
+          <div>
+            <p class="eyebrow">Finance, taught in motion</p>
+            <h1>Findamentals</h1>
+          </div>
+        </div>
+        <nav class="topnav" aria-label="Primary">
+          <a href="./index.html">Home</a>
+          <a href="#edition">Today</a>
+          <a href="#reads">Reads</a>
+          <a href="./about.html">About</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="home-hero" id="edition">
+          <div class="hero-copy">
+            <p class="section-kicker">Sunday Edition • 26 April</p>
+            <h2>One briefing. Three ways in.</h2>
+            <p class="hero-text">
+              Findamentals opens on today’s finance briefing: current news, skills that sharpen
+              judgement, historical context that builds memory, research that deepens conviction, and
+              people worth following because they move capital, policy, or the conversation itself.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="./lead-read.html">Open today’s lead read</a>
+              <a class="button button-secondary" href="./about.html">About Findamentals</a>
+            </div>
+          </div>
+
+          <section class="edition-panel scroll-panel" aria-label="Today’s reading sequence" data-scroll-panel>
+            <div class="progress-track edition-progress" aria-hidden="true">
+              <span class="progress-fill" data-progress-fill></span>
+            </div>
+
+            <a class="story-card is-active" data-story-card href="./lead-read.html">
+              <p class="story-type">Lead read</p>
+              <h3>Higher-for-longer is really a discipline story.</h3>
+              <p>
+                A current macro note on energy, inflation expectations, and why “higher for longer” is
+                really about valuation discipline and credibility.
+              </p>
+            </a>
+
+            <a class="story-card" data-story-card href="./skill-drill.html">
+              <p class="story-type">Skill drill</p>
+              <h3>What operating leverage really tells you</h3>
+              <p>
+                A practical explainer using recent company reporting to show how revenue growth can turn
+                into much larger earnings moves.
+              </p>
+            </a>
+
+            <a class="story-card" data-story-card href="./historical-lens.html">
+              <p class="story-type">Historical lens</p>
+              <h3>Three tightening lessons worth remembering</h3>
+              <p>
+                Why 1979, the early 1980s, and later easing cycles still help readers think more clearly
+                about today’s inflation shock.
+              </p>
+            </a>
+          </section>
+        </section>
+
+        <section class="today-layout reveal">
+          <article class="lead-read editorial-brief">
+            <div class="brief-topline">
+              <p class="section-kicker">Editor’s Brief</p>
+              <span class="brief-rule"></span>
+            </div>
+            <h3>Capital is still moving. It is simply becoming more selective.</h3>
+            <p class="brief-lead">
+              Energy has reintroduced inflation tension just as markets were hoping for cleaner relief.
+              Growth is still standing, but the easy narrative has broken. What survives now is quality:
+              durable margins, sound balance sheets, credible management, and assets that do not need a
+              perfectly timed policy rescue.
+            </p>
+            <p>
+              Today’s edition follows that thread across three lenses. The lead read looks at policy
+              credibility and valuation discipline. The skill drill shows how operating leverage can
+              magnify apparently small shifts in demand. The historical lens asks which inflation-era
+              lessons are still useful, and which ones deserve to be left in the archive.
+            </p>
+          </article>
+        </section>
+
+        <section class="content-grid reveal" id="reads">
+          <a class="feed-card feed-link" href="./lead-read.html">
+            <p class="feed-tag">Lead Read</p>
+            <h3>Higher-for-longer is really a discipline story</h3>
+            <p>Inflation risk, central-bank credibility, and why markets care about the shape of resilience.</p>
+          </a>
+          <a class="feed-card feed-link" href="./skill-drill.html">
+            <p class="feed-tag">Skill Drill</p>
+            <h3>Operating leverage without the jargon fog</h3>
+            <p>How rising revenue can turn into much faster profit growth, and why the reverse bites hard.</p>
+          </a>
+          <a class="feed-card feed-link" href="./historical-lens.html">
+            <p class="feed-tag">Historical Lens</p>
+            <h3>Inflation memory, not inflation nostalgia</h3>
+            <p>Three moments from earlier cycles that sharpen how to read today’s mix of prices and policy.</p>
+          </a>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
