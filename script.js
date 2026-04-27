@@ -25,14 +25,14 @@ const currentEditionState = editionState.currentEdition ?? {};
 const nextEditionWorkflowState = editionState.nextEditionWorkflow ?? {};
 
 const dailyEditionMeta = {
-  focus: currentEditionState.focus ?? "Inflation, quality, selective resilience",
-  format: currentEditionState.format ?? "Lead read, skill drill, historical lens",
+  focus: currentEditionState.focus ?? "Policy buffers, financial modelling, model-risk history",
+  format: currentEditionState.format ?? "Macro read, modelling drill, historical case study",
 };
 
 const workflowSearchContext = {
   "lead-read": ["macro", "inflation", "energy", "central bank"],
-  "skill-drill": ["company", "earnings", "operator", "technology"],
-  "historical-lens": ["federal reserve", "history", "inflation", "policy"],
+  "skill-drill": ["financial modelling", "spreadsheet", "excel", "scenario"],
+  "historical-lens": ["model risk", "spreadsheet", "London Whale", "governance"],
 };
 
 const workflowFigureProfiles = {
@@ -43,16 +43,14 @@ const workflowFigureProfiles = {
     { name: "Claudia Sahm", image: "https://claudiasahm.com/wp-content/uploads/2024/09/Claudia-Sahm-square-headshot.jpg", source: "https://claudiasahm.com/wp-content/uploads/2024/09/Claudia-Sahm-square-headshot.jpg" },
   ],
   "skill-drill": [
-    { name: "Jensen Huang", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Jensen%20Huang%20%28cropped%29%20%282024%29.jpg", source: "https://commons.wikimedia.org/wiki/File:Jensen_Huang_(cropped)_(2024).jpg" },
-    { name: "David Solomon", image: "https://www.goldmansachs.com/images/migrated/about-us/people-and-leadership/leadership/management-committee/images/david-solomon-1000x1000.png", source: "https://www.goldmansachs.com/images/migrated/about-us/people-and-leadership/leadership/management-committee/images/david-solomon-1000x1000.png" },
-    { name: "Satya Nadella", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Satya%20Nadella%202024.jpg", source: "https://commons.wikimedia.org/wiki/File:Satya_Nadella_2024.jpg" },
-    { name: "Tim Cook", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Tim%20Cook%20by%20Gage%20Skidmore%202023.jpg", source: "https://commons.wikimedia.org/wiki/File:Tim_Cook_by_Gage_Skidmore_2023.jpg" },
+    { name: "Ian Schnoor", image: "../Main site/assets/model-grid.svg", source: "https://ca.linkedin.com/in/ianschnoor" },
+    { name: "John Dimberline", image: "../Main site/assets/model-grid.svg", source: "https://uk.linkedin.com/in/johndimberline-financialmodelling" },
+    { name: "Financial Modeling Institute", image: "../Main site/assets/model-grid.svg", source: "https://www.linkedin.com/company/fminstitute" },
   ],
   "historical-lens": [
-    { name: "Paul Volcker", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20A.%20Volcker%20%28cropped%29.jpg", source: "https://commons.wikimedia.org/wiki/File:Paul_A._Volcker_(cropped).jpg" },
-    { name: "Alan Greenspan", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Alan%20Greenspan%2C%20official%20Federal%20Reserve%20photo.jpg", source: "https://commons.wikimedia.org/wiki/File:Alan_Greenspan,_official_Federal_Reserve_photo.jpg" },
-    { name: "Arthur Burns", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Arthur%20F.%20Burns.jpg", source: "https://commons.wikimedia.org/wiki/File:Arthur_F._Burns.jpg" },
-    { name: "Ben Bernanke", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Ben%20Bernanke%20official%20portrait.jpg", source: "https://commons.wikimedia.org/wiki/File:Ben_Bernanke_official_portrait.jpg" },
+    { name: "Ian Schnoor", image: "../Main site/assets/model-grid.svg", source: "https://www.linkedin.com/in/ianschnoor" },
+    { name: "Financial Modeling Institute", image: "../Main site/assets/model-grid.svg", source: "https://www.linkedin.com/company/fminstitute" },
+    { name: "John Dimberline", image: "../Main site/assets/model-grid.svg", source: "https://uk.linkedin.com/in/johndimberline-financialmodelling" },
   ],
 };
 
