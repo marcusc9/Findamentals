@@ -495,6 +495,28 @@ function wireAvatarFallbacks() {
   });
 }
 
+function wireExternalBlankLinks() {
+  document.querySelectorAll('a[target="_blank"]').forEach((link) => {
+    if (link.dataset.externalWired === "true") {
+      return;
+    }
+
+    link.addEventListener("click", (event) => {
+      const href = link.getAttribute("href");
+
+      if (!href || event.defaultPrevented) {
+        return;
+      }
+
+      event.preventDefault();
+      event.stopPropagation();
+      window.open(href, "_blank", "noopener,noreferrer");
+    });
+
+    link.dataset.externalWired = "true";
+  });
+}
+
 function createAvatarFallback(name, className) {
   const fallback = document.createElement("span");
   fallback.className = `${className} is-fallback`;
@@ -1079,6 +1101,7 @@ revealTargets.forEach((target) => {
 applyDailyEditionMeta();
 applyWorkflowEditionState();
 wireAvatarFallbacks();
+wireExternalBlankLinks();
 wireWorkflowCards();
 wireWorkflowLiveTabs();
 renderWorkflowLiveDashboard(null, false);
