@@ -25,14 +25,14 @@ const currentEditionState = editionState.currentEdition ?? {};
 const nextEditionWorkflowState = editionState.nextEditionWorkflow ?? {};
 
 const dailyEditionMeta = {
-  focus: currentEditionState.focus ?? "MPC recommendation, ISA allocation, sterling credibility",
-  format: currentEditionState.format ?? "Recommendation memo, formula drill, historical lens",
+  focus: currentEditionState.focus ?? "AI capex discipline, financial modelling, model-risk control",
+  format: currentEditionState.format ?? "Capital-allocation framework, formula drill, historical lens",
 };
 
 const workflowSearchContext = {
-  "lead-read": ["macro", "inflation", "energy", "central bank"],
-  "skill-drill": ["company", "earnings", "operator", "technology"],
-  "historical-lens": ["federal reserve", "history", "inflation", "policy"],
+  "lead-read": ["ai capex", "cloud", "hyperscaler", "capital allocation"],
+  "skill-drill": ["financial modelling", "spreadsheet", "scenario", "model checks"],
+  "historical-lens": ["model risk", "london whale", "jpmorgan", "var"],
 };
 
 const workflowFigureProfiles = {
