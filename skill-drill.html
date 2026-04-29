@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Skill Drill | Build the model so the decision can survive the spreadsheet</title>
+    <title>Skill Drill | How to test private credit fragility without the jargon fog</title>
     <meta
       name="description"
-      content="A Findamentals financial-modelling drill on inputs, assumptions, calculations, outputs, checks, scenarios, audit trails, and practical Excel discipline."
+      content="A Findamentals credit-risk drill on interest coverage, fixed-charge coverage, loan-to-value, maturity walls, rollover gaps, and PIK dependence."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,18 +36,18 @@
 
       <main class="article-page">
         <section class="article-hero reveal">
-          <p class="section-kicker">Skill Drill • 28 April 2026</p>
-          <h2>Build the model so the decision can survive the spreadsheet.</h2>
+          <p class="section-kicker">Skill Drill • 29 April 2026</p>
+          <h2>How to test private credit fragility without the jargon fog.</h2>
           <p class="hero-text">
-            A good financial model is not a tidy Excel file. It is a decision system: clear inputs,
-            transparent assumptions, copy-across calculations, useful outputs, checks, scenarios, and an
-            audit trail strong enough to challenge the answer.
+            High yield is not the same as high quality. This drill turns private-credit risk into four
+            practical checks: cash interest coverage, covenant headroom, maturity walls, and dependence on
+            PIK interest or amend-and-extend relief.
           </p>
           <div class="article-cover cover-policy">
             <div class="cover-chip-row">
-              <span class="cover-chip">Model architecture</span>
-              <span class="cover-chip cover-chip-soft">Checks</span>
-              <span class="cover-chip cover-chip-soft">Scenarios</span>
+              <span class="cover-chip">Coverage</span>
+              <span class="cover-chip cover-chip-soft">Covenants</span>
+              <span class="cover-chip cover-chip-soft">Rollover risk</span>
             </div>
             <div class="cover-composition cover-composition-policy">
               <div class="cover-panel cover-panel-large"></div>
@@ -59,56 +59,54 @@
                 <span></span>
               </div>
             </div>
-            <div class="cover-caption">Inputs, calculations, outputs, checks, scenarios, audit trail.</div>
+            <div class="cover-caption">Coverage, headroom, maturity, and refinancing pressure.</div>
           </div>
         </section>
 
         <section class="article-layout reveal">
           <article class="article-body card">
             <p>
-              Start with architecture before formulas. A compact operating model for a UK subscription
-              software business might begin with opening customers, churn, new customer additions, average
-              revenue per account, gross margin, fixed staff costs, marketing spend, and a working-capital
-              lag. Those inputs should be visibly separate from calculations and outputs.
+              Start with cash interest coverage. The simplest version is cash EBITDA divided by cash
+              interest expense. A borrower with GBP 40 million of EBITDA and GBP 18 million of cash
+              interest has 2.2 times coverage. If base rates rise, margins widen, or EBITDA add-backs prove
+              optimistic, that cushion can shrink quickly.
             </p>
             <p>
-              The calculation engine then turns the inputs into revenue, gross profit, EBITDA, free cash
-              flow, runway, and debt capacity. The core equations are plain: revenue = volume x price;
-              EBITDA = revenue - variable costs - fixed costs; closing debt = opening debt + drawdowns -
-              repayments. If the model needs a paragraph to explain a formula, the formula probably needs
-              to be broken apart.
+              The better version is fixed-charge coverage: cash EBITDA minus maintenance capex, divided by
+              cash interest plus scheduled principal, leases, and other unavoidable charges. That number
+              asks whether the borrower can meet the full cash burden, not just the coupon. If coverage is
+              only protected by aggressive cost add-backs, it is weaker than the headline suggests.
             </p>
             <figure class="article-image article-image-wide">
               <img
-                src="https://commons.wikimedia.org/wiki/Special:FilePath/CWF%20Financial%20Model.jpg"
-                alt="Financial model flow diagram."
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/Basic%20Credit%20Default%20Swap%20%28CDS%29%20diagram.svg"
+                alt="Basic credit default swap diagram showing credit-risk transfer flows."
                 loading="lazy"
               />
               <figcaption>
-                Proposed image: a financial-model flow diagram, foregrounding model architecture rather
-                than generic office imagery. Source:
-                <a href="https://commons.wikimedia.org/wiki/File:CWF_Financial_Model.jpg" target="_blank" rel="noreferrer">Wikimedia Commons</a>.
+                A credit-risk flow diagram as the visual bridge from attractive yield to the transfer and
+                concentration of default risk. Source:
+                <a href="https://commons.wikimedia.org/wiki/File:Basic_Credit_Default_Swap_(CDS)_diagram.svg" target="_blank" rel="noreferrer">Wikimedia Commons</a>.
               </figcaption>
             </figure>
             <p>
-              Use functions to make the decision clearer, not to make the workbook clever. XLOOKUP or
-              INDEX/MATCH can pull scenario assumptions without hardcoded row references. SUMIFS can
-              aggregate revenue or cost lines by segment. EOMONTH keeps time columns consistent. IF or IFS
-              can drive flags. CHOOSE can switch scenarios. LET can make a longer calculation readable
-              when it avoids repeating the same expression.
+              Next, test covenant headroom. If a loan allows net debt / EBITDA of 6.0 times and the borrower
+              is already at 5.4 times, a small EBITDA miss can matter. Loan-to-value gives a second lens:
+              debt divided by enterprise value. A valuation that looked conservative at entry can become
+              thin protection if sector multiples fall before the borrower refinances.
             </p>
             <p>
-              The controls are as important as the forecast. Add a balance-sheet check, cash-flow tie-out,
-              sign-convention check, hardcode detection, circularity warning, formula consistency test,
-              and sensitivity sanity check. Short, copy-across formulas reduce risk because reviewers can
-              compare the same logic across periods. Consistent time columns reduce the chance that one
-              month, quarter, or year has silently become a special case.
+              Then map the maturity wall. The rollover gap is the debt due in the next refinancing window
+              minus committed liquidity and realistic free cash flow. A borrower can be current today and
+              fragile tomorrow if most of its debt must be refinanced at a higher spread before earnings
+              have caught up.
             </p>
             <p>
-              The final model should make stress testing easy. Lower new-customer growth, raise churn,
-              delay the price increase, let fixed costs creep, or stretch working capital. If one switch
-              can show the effect on EBITDA, free cash flow, runway, and debt capacity, the spreadsheet is
-              doing its real job: helping the decision survive contact with uncertainty.
+              Finally, look for dependency on PIK interest or amend-and-extend terms. These tools can be
+              useful bridges, but they can also delay recognition of a borrower that cannot support cash
+              interest or refinance normally. A fund advertising yield should be able to explain marks,
+              borrower concentration, liquidity terms, and how many credits need relief rather than just
+              time.
             </p>
           </article>
 
@@ -117,29 +115,29 @@
               <p class="mini-label">People to watch on LinkedIn</p>
               <ul class="link-list">
                 <li>
-                  <a class="person-link" href="https://www.linkedin.com/search/results/people/?keywords=Ian%20Schnoor" target="_blank" rel="noreferrer">
-                    <span class="person-avatar is-fallback" aria-label="Ian Schnoor initials avatar">IS</span>
+                  <a class="person-link" href="https://www.linkedin.com/search/results/people/?keywords=Howard%20Marks%20credit" target="_blank" rel="noreferrer">
+                    <span class="person-avatar is-fallback" aria-label="Howard Marks initials avatar">HM</span>
                     <span>
-                      <strong>Ian Schnoor</strong>
-                      <em>Useful for practical modelling standards and training-led model review.</em>
+                      <strong>Howard Marks</strong>
+                      <em>Useful for cycle discipline, credit selection, and downside framing.</em>
                     </span>
                   </a>
                 </li>
                 <li>
-                  <a class="person-link" href="https://www.linkedin.com/search/results/people/?keywords=Dan%20Wells%20financial%20modelling" target="_blank" rel="noreferrer">
-                    <span class="person-avatar is-fallback" aria-label="Dan Wells initials avatar">DW</span>
+                  <a class="person-link" href="https://www.linkedin.com/search/results/people/?keywords=Michael%20Cembalest%20credit" target="_blank" rel="noreferrer">
+                    <span class="person-avatar is-fallback" aria-label="Michael Cembalest initials avatar">MC</span>
                     <span>
-                      <strong>Dan Wells</strong>
-                      <em>Watch for structured modelling principles and spreadsheet craft.</em>
+                      <strong>Michael Cembalest</strong>
+                      <em>Watch for borrower-quality charts, credit spreads, and market-cycle context.</em>
                     </span>
                   </a>
                 </li>
                 <li>
-                  <a class="person-link" href="https://www.linkedin.com/search/results/people/?keywords=Raymond%20Panko%20spreadsheet%20errors" target="_blank" rel="noreferrer">
-                    <span class="person-avatar is-fallback" aria-label="Raymond Panko initials avatar">RP</span>
+                  <a class="person-link" href="https://www.linkedin.com/search/results/people/?keywords=Sonali%20Basak%20private%20credit" target="_blank" rel="noreferrer">
+                    <span class="person-avatar is-fallback" aria-label="Sonali Basak initials avatar">SB</span>
                     <span>
-                      <strong>Raymond Panko</strong>
-                      <em>Grounds the control argument in spreadsheet-error research.</em>
+                      <strong>Sonali Basak</strong>
+                      <em>Useful for reported failures, fund terms, and private-market confidence.</em>
                     </span>
                   </a>
                 </li>
@@ -149,10 +147,10 @@
             <section class="sidebar-card">
               <p class="mini-label">Source trail</p>
               <ul class="link-list">
-                <li><a href="https://www.sciencedirect.com/science/article/pii/S0167923610000461" target="_blank" rel="noreferrer">Revising the Panko-Halverson taxonomy of spreadsheet errors</a></li>
-                <li><a href="https://www.fast-standard.org/the-fast-standard/" target="_blank" rel="noreferrer">The FAST Standard</a></li>
-                <li><a href="https://www.f1f9.com/how-to-build-a-financial-model/" target="_blank" rel="noreferrer">F1F9 guide to building a financial model</a></li>
-                <li><a href="https://www.f1f9.com/blog/model-balances-excel/" target="_blank" rel="noreferrer">F1F9 corkscrew schedule guide</a></li>
+                <li><a href="https://www.imf.org/en/publications/gfsr/issues/2024/04/16/global-financial-stability-report-april-2024" target="_blank" rel="noreferrer">IMF Global Financial Stability Report, private credit chapter</a></li>
+                <li><a href="https://www.bankofengland.co.uk/financial-stability-report/2025/december-2025" target="_blank" rel="noreferrer">Bank of England Financial Stability Report, December 2025</a></li>
+                <li><a href="https://www.federalreserve.gov/publications/november-2025-financial-stability-report-borrowing-by-business-and-households.htm" target="_blank" rel="noreferrer">Federal Reserve Financial Stability Report, business borrowing</a></li>
+                <li><a href="https://www.jpmorganchase.com/ir/annual-report/2025/ar-ceo-letters" target="_blank" rel="noreferrer">JPMorgan Chase 2025 Chairman and CEO letter</a></li>
               </ul>
             </section>
           </aside>
@@ -161,18 +159,18 @@
         <section class="next-reads reveal" aria-label="Continue the edition">
           <div class="next-reads-heading">
             <p class="section-kicker">Continue the edition</p>
-            <h3>Use the modelling discipline in the live AI capex question and the London Whale case.</h3>
+            <h3>Use the borrower drill inside today's sentiment debate and the credit-cycle history.</h3>
           </div>
           <div class="next-reads-grid">
             <a class="next-read-card next-read-lead" href="./lead-read.html">
               <p class="feed-tag">Lead Read</p>
-              <h4>Can AI capex still clear the return-on-capital test?</h4>
-              <p>Apply the model architecture to hyperscaler spend, utilisation, and returns.</p>
+              <h4>Why has private credit gone from quiet portfolio hero to market worry?</h4>
+              <p>Put the ratios back into the market story about opacity and refinancing pressure.</p>
             </a>
             <a class="next-read-card next-read-history" href="./historical-lens.html">
               <p class="feed-tag">Historical Lens</p>
-              <h4>The London Whale and the model that made risk look smaller</h4>
-              <p>See what happens when a risk model becomes permission rather than review.</p>
+              <h4>The junk-bond lesson: private credit is new plumbing for an old credit-cycle problem</h4>
+              <p>Compare today's private loans with an older cycle of credit innovation and demand.</p>
             </a>
           </div>
         </section>
