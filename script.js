@@ -13,6 +13,7 @@ const copyNote = document.querySelector("[data-copy-note]");
 const homeFocus = document.querySelector("[data-home-focus]");
 const homeFormat = document.querySelector("[data-home-format]");
 const workflowDeadline = document.querySelector("[data-workflow-deadline]");
+const workflowTitle = document.querySelector("[data-workflow-title]");
 const workflowLive = document.querySelector("[data-workflow-live]");
 const workflowLiveBridge = document.querySelector("[data-workflow-live-bridge]");
 const workflowLiveSummary = document.querySelector("[data-workflow-live-summary]");
@@ -25,34 +26,34 @@ const currentEditionState = editionState.currentEdition ?? {};
 const nextEditionWorkflowState = editionState.nextEditionWorkflow ?? {};
 
 const dailyEditionMeta = {
-  focus: currentEditionState.focus ?? "AI capex discipline, financial modelling, model-risk control",
-  format: currentEditionState.format ?? "Capital-allocation framework, formula drill, historical lens",
+  focus: currentEditionState.focus ?? "Private-credit sentiment, borrower fragility, credit-cycle history",
+  format: currentEditionState.format ?? "Sentiment explainer, credit-risk drill, historical lens",
 };
 
 const workflowSearchContext = {
-  "lead-read": ["ai capex", "cloud", "hyperscaler", "capital allocation"],
-  "skill-drill": ["financial modelling", "spreadsheet", "scenario", "model checks"],
-  "historical-lens": ["model risk", "london whale", "jpmorgan", "var"],
+  "lead-read": ["private credit", "direct lending", "credit markets", "Jamie Dimon"],
+  "skill-drill": ["private credit", "credit default swap", "borrower fragility", "risk transfer"],
+  "historical-lens": ["junk bonds", "Michael Milken", "Drexel", "credit cycle"],
 };
 
 const workflowFigureProfiles = {
   "lead-read": [
-    { name: "Mohamed El-Erian", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Mohamed%20A.%20El-Erian%20%28cropped%29.jpg", source: "https://commons.wikimedia.org/wiki/File:Mohamed_A._El-Erian_(cropped).jpg" },
-    { name: "Christine Lagarde", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Christine%20Lagarde%202023.jpg", source: "https://commons.wikimedia.org/wiki/File:Christine_Lagarde_2023.jpg" },
-    { name: "Andrew Bailey", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Andrew%20Bailey%20%28cropped%29.jpg", source: "https://commons.wikimedia.org/wiki/File:Andrew_Bailey_(cropped).jpg" },
-    { name: "Claudia Sahm", image: "https://claudiasahm.com/wp-content/uploads/2024/09/Claudia-Sahm-square-headshot.jpg", source: "https://claudiasahm.com/wp-content/uploads/2024/09/Claudia-Sahm-square-headshot.jpg" },
+    { name: "Jamie Dimon", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Jamie%20Dimon%2C%20CEO%20of%20JPMorgan%20Chase.jpg", source: "https://commons.wikimedia.org/wiki/File:Jamie_Dimon,_CEO_of_JPMorgan_Chase.jpg" },
+    { name: "David Solomon", image: "https://www.goldmansachs.com/images/migrated/about-us/people-and-leadership/leadership/management-committee/images/david-solomon-1000x1000.png", source: "https://www.goldmansachs.com/images/migrated/about-us/people-and-leadership/leadership/management-committee/images/david-solomon-1000x1000.png" },
+    { name: "Marc Rowan", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Marc%20Rowan%20-%20World%20Economic%20Forum%20Annual%20Meeting%202023.jpg", source: "https://commons.wikimedia.org/wiki/File:Marc_Rowan_-_World_Economic_Forum_Annual_Meeting_2023.jpg" },
+    { name: "Sarah Breeden", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Sarah%20Breeden%20-%20Bank%20of%20England.jpg", source: "https://commons.wikimedia.org/wiki/File:Sarah_Breeden_-_Bank_of_England.jpg" },
   ],
   "skill-drill": [
-    { name: "Jensen Huang", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Jensen%20Huang%20%28cropped%29%20%282024%29.jpg", source: "https://commons.wikimedia.org/wiki/File:Jensen_Huang_(cropped)_(2024).jpg" },
-    { name: "David Solomon", image: "https://www.goldmansachs.com/images/migrated/about-us/people-and-leadership/leadership/management-committee/images/david-solomon-1000x1000.png", source: "https://www.goldmansachs.com/images/migrated/about-us/people-and-leadership/leadership/management-committee/images/david-solomon-1000x1000.png" },
-    { name: "Satya Nadella", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Satya%20Nadella%202024.jpg", source: "https://commons.wikimedia.org/wiki/File:Satya_Nadella_2024.jpg" },
-    { name: "Tim Cook", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Tim%20Cook%20by%20Gage%20Skidmore%202023.jpg", source: "https://commons.wikimedia.org/wiki/File:Tim_Cook_by_Gage_Skidmore_2023.jpg" },
+    { name: "Howard Marks", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Howard%20Marks%20at%20Delivering%20Alpha%202018.jpg", source: "https://commons.wikimedia.org/wiki/File:Howard_Marks_at_Delivering_Alpha_2018.jpg" },
+    { name: "Katie Koch", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Katie%20Koch%202023.jpg", source: "https://commons.wikimedia.org/wiki/File:Katie_Koch_2023.jpg" },
+    { name: "Michael Cembalest", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Michael%20Cembalest.jpg", source: "https://commons.wikimedia.org/wiki/File:Michael_Cembalest.jpg" },
+    { name: "Sonali Basak", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Sonali%20Basak.jpg", source: "https://commons.wikimedia.org/wiki/File:Sonali_Basak.jpg" },
   ],
   "historical-lens": [
-    { name: "Paul Volcker", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20A.%20Volcker%20%28cropped%29.jpg", source: "https://commons.wikimedia.org/wiki/File:Paul_A._Volcker_(cropped).jpg" },
-    { name: "Alan Greenspan", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Alan%20Greenspan%2C%20official%20Federal%20Reserve%20photo.jpg", source: "https://commons.wikimedia.org/wiki/File:Alan_Greenspan,_official_Federal_Reserve_photo.jpg" },
-    { name: "Arthur Burns", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Arthur%20F.%20Burns.jpg", source: "https://commons.wikimedia.org/wiki/File:Arthur_F._Burns.jpg" },
-    { name: "Ben Bernanke", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Ben%20Bernanke%20official%20portrait.jpg", source: "https://commons.wikimedia.org/wiki/File:Ben_Bernanke_official_portrait.jpg" },
+    { name: "Michael Milken", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Mike%20Milken.jpg", source: "https://commons.wikimedia.org/wiki/File:Mike_Milken.jpg" },
+    { name: "Edward Altman", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Edward%20Altman.jpg", source: "https://commons.wikimedia.org/wiki/File:Edward_Altman.jpg" },
+    { name: "Raghuram Rajan", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Raghuram%20Rajan%2C%20November%202024.jpg", source: "https://commons.wikimedia.org/wiki/File:Raghuram_Rajan,_November_2024.jpg" },
+    { name: "Gillian Tett", image: "https://commons.wikimedia.org/wiki/Special:FilePath/Gillian%20Tett.jpg", source: "https://commons.wikimedia.org/wiki/File:Gillian_Tett.jpg" },
   ],
 };
 
@@ -106,6 +107,10 @@ function applyDailyEditionMeta() {
 
   if (workflowDeadline) {
     workflowDeadline.textContent = `Approval window: ${nextEditionWorkflowState.approvalWindow ?? "6pm BST"}.`;
+  }
+
+  if (workflowTitle) {
+    workflowTitle.textContent = nextEditionWorkflowState.targetEditionLabel ?? "Next image handoff.";
   }
 }
 
